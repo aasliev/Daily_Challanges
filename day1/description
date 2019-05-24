@@ -1,0 +1,16 @@
+Given an array of integers, write a function that returns true if there is a triplet (a, b, c) that satisfies a^2 + b^2 = c^2.
+
+>Input:
+
+The first line contains T, denoting the number of testcases. Then follows description of testcases. Each case begins with a single positive
+integer N denoting the size of array. The second line contains the N space separated positive integers denoting the elements of array A.
+
+>Output:
+
+For each testcase, print "Yes" or  "No" whether it is Pythagorean Triplet or not (without quotes).
+
+>Constraints:
+
+1 <= T <= 100
+1 <= N <= 107
+1 <= A[i] <= 1000
