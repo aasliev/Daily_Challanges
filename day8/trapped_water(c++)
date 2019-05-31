@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+int trapped_water(int a[],int n);
+int main() {
+	//code
+	int t, n, *a;
+	cin >> t;
+	for(int i=0; i<t;i++)
+	{
+	    cin>>n;
+	    a = new int[n];
+	    for(int i=0;i<n;i++)
+	        cin >>a[i];
+	    cout << trapped_water(a,n)<<endl;
+	    delete []a;
+	}
+	return 0;
+}
+
+int trapped_water(int a[], int n)
+{
+    int leftWall[n], rightWall[n],result = 0;
+    leftWall[0] = a[0]; rightWall[n-1] = a[n-1];
+    for(int i=1; i<n-1;i++)
+    {
+        leftWall[i] = max(leftWall[i-1],a[i]);
+        rightWall[n-1-i] = max(rightWall[n-i],a[n-i-1]);
+    }
+    for(int i=1; i<n-1; i++)
+    {
+        if ((min(leftWall[i],rightWall[i]) - a[i] )> 0)
+        {
+            result+= (min(leftWall[i],rightWall[i]) - a[i]);
+        }
+    }
+    return result;
+}
